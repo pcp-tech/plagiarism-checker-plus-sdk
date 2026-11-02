@@ -1,0 +1,13 @@
+node_modules/
+dist/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+vendor/
+composer.lock
+*.gem
+target/
+bin/
+obj/
+.vs/
+*.class

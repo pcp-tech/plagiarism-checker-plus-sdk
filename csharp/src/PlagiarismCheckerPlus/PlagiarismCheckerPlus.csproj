@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;netstandard2.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <RootNamespace>PlagiarismCheckerPlus</RootNamespace>
+    <PackageId>PlagiarismCheckerPlus</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Plagiarism Checker Plus</Authors>
+    <Company>Plagiarism Checker Plus</Company>
+    <Copyright>Copyright (c) 2026 Plagiarism Checker Plus</Copyright>
+    <Description>Official .NET client for the Plagiarism Checker Plus API: plagiarism checks with sources and AI writing detection.</Description>
+    <PackageTags>plagiarism-checker;ai-detector;ai-content-detection;plagiarism;api</PackageTags>
+    <PackageProjectUrl>https://plagiarismcheckerplus.com</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/pcp-tech/plagiarism-checker-plus-sdk</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
