@@ -1,38 +1,26 @@
 # Plagiarism Checker Plus SDKs
 
-Official client libraries for the [Plagiarism Checker Plus API](https://plagiarismcheckerplus.com/integrations/api). Check text for plagiarism, with the matching sources, and for likely AI-generated content, with a likelihood for each sentence.
+Official client libraries for the [Plagiarism Checker Plus API](https://plagiarismcheckerplus.com/integrations/api): plagiarism checks with linked sources, and AI writing detection with a likelihood for each sentence.
 
-| Language | Folder | Package |
+Each language now lives in its own repository:
+
+| Language | Repository | Install |
 |---|---|---|
-| JavaScript / TypeScript | [`js`](js) | `plagiarism-checker-plus` (npm) |
-| Python | [`python`](python) | `plagiarism-checker-plus` (PyPI) |
-| PHP | [`php`](php) | `plagiarismcheckerplus/sdk` (Composer) |
-| Ruby | [`ruby`](ruby) | `plagiarism_checker_plus` (RubyGems) |
-| Go | [`go`](go) | `github.com/pcp-tech/plagiarism-checker-plus-sdk/go` |
-| Java | [`java`](java) | `com.plagiarismcheckerplus:sdk` (Maven) |
-| C# / .NET | [`csharp`](csharp) | `PlagiarismCheckerPlus` (NuGet) |
+| JavaScript / TypeScript | [plagiarism-checker-plus-js](https://github.com/pcp-tech/plagiarism-checker-plus-js) | `npm install plagiarism-checker-plus` |
+| Python | [plagiarism-checker-plus-python](https://github.com/pcp-tech/plagiarism-checker-plus-python) | `pip install plagiarism-checker-plus` |
+| PHP | [plagiarism-checker-plus-php](https://github.com/pcp-tech/plagiarism-checker-plus-php) | `composer require plagiarismcheckerplus/sdk` |
+| Ruby | [plagiarism-checker-plus-ruby](https://github.com/pcp-tech/plagiarism-checker-plus-ruby) | `gem install plagiarism_checker_plus` |
+| Go | [plagiarism-checker-plus-go](https://github.com/pcp-tech/plagiarism-checker-plus-go) | `go get github.com/pcp-tech/plagiarism-checker-plus-go` |
+| Java | [plagiarism-checker-plus-java](https://github.com/pcp-tech/plagiarism-checker-plus-java) | Maven `com.plagiarismcheckerplus:sdk` |
+| C# / .NET | [plagiarism-checker-plus-dotnet](https://github.com/pcp-tech/plagiarism-checker-plus-dotnet) | `dotnet add package PlagiarismCheckerPlus` |
 
-Every library offers the same calls:
+The API needs a paid plan. A key on the free plan returns `403 plan_required`.
 
-- `createScan(text, tools, name?)`: submit text. `tools` is any of `plagiarism` and `ai_detect`.
-- `getScan(id, includeText?)`: read a scan and its results.
-- `listScans(page?, limit?)`: list scans, newest first.
-- `getAccount()`: plan and remaining words.
-- `waitForScan(id)`: poll until the scan is `completed` or `failed`, backing off and honouring `Retry-After`.
+An AI score is a likelihood, not proof that someone used AI.
 
-Errors carry the HTTP status and the API's error code, such as `plan_required`, `text_too_short`, `doc_too_long` or `insufficient_words`.
+The API reference is [`spec/openapi.json`](spec/openapi.json), copied from `https://app.plagiarismcheckerplus.com/api/public/v1/openapi.json`.
 
-## Before you start
-
-- **A paid plan is required.** A key on the free plan authenticates and then returns `403 plan_required`.
-- Create an API key in **Settings → API** in the app. It is shown once.
-- The rate limit is 60 requests a minute per key.
-- Each tool is billed at the full word count: 800 words checked for both plagiarism and AI uses 1,600 words.
-- Minimum length is 30 words for `plagiarism` and 50 for `ai_detect`.
-- Scans are asynchronous and usually finish in 30 to 90 seconds.
-- An AI score is a likelihood, not proof that text was written by AI. A similarity score shows matching text, not intent.
-
-The API reference is [`openapi.json`](openapi.json), copied from `https://app.plagiarismcheckerplus.com/api/public/v1/openapi.json`.
+For AI assistants, see the hosted MCP server: https://github.com/pcp-tech/plagiarism-checker-plus-mcp
 
 ## License
 
