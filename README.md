@@ -17,7 +17,7 @@ Each language now lives in its own repository:
 Get a free API key at https://app.plagiarismcheckerplus.com/developers (test keys are free and unlimited).
 
 - **Test keys** (`pcp_test_...`) are free and unlimited on every plan. They never run a check and return fixed sample results in the same shape as a real scan, marked `"sandbox": true`.
-- **Free API trial**: each free account gets 5,000 live API words once, with no card. When it cannot cover a request, the API returns `402 trial_exhausted`.
+- **Free API trial**: each free account gets 2,000 live API words once, with no card. When it cannot cover a request, the API returns `402 trial_exhausted`.
 - **Paid app plans** (Student, Personal, Team) use their plan words for API calls.
 - **API plans**: Starter $25/month (300,000 words), Growth $99/month (1,500,000 words), Scale $399/month (7,500,000 words). **Pay as you go**: words from $4.50 (50,000 words, $0.09 per 1,000 words).
 - See [API pricing](https://plagiarismcheckerplus.com/api-pricing). Keys, usage, billing and webhooks are in the [developer portal](https://app.plagiarismcheckerplus.com/developers).
