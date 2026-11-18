@@ -20,6 +20,10 @@ An AI score is a likelihood, not proof that someone used AI.
 
 The API reference is [`spec/openapi.json`](spec/openapi.json), copied from `https://app.plagiarismcheckerplus.com/api/public/v1/openapi.json`.
 
+- Plagiarism Checker API overview: https://plagiarismcheckerplus.com/integrations/api
+- AI Detector API overview: https://plagiarismcheckerplus.com/ai-detector-api
+- API reference (try requests in the browser): https://app.plagiarismcheckerplus.com/api-docs
+
 For AI assistants, see the hosted MCP server: https://github.com/pcp-tech/plagiarism-checker-plus-mcp
 
 ## License
